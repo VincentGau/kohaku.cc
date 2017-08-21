@@ -1,0 +1,27 @@
+{% extends 'haku_chat/layout.html' %}
+{% load static %}
+
+
+{% block block_content %}
+    <div style="display:none">
+        Hello, <span id="username">{{ username }}</span>
+    </div>
+
+    <div id="chat_panel">
+        <div id="message_box">
+            <div class="message_item"></div>
+        </div>
+        <div id="type_area">
+            <textarea name="message_to_be_sent" id="message_to_be_sent" cols="30" rows="5"></textarea>
+            <button onclick="send_message()">Send</button>
+        </div>
+        <ul id="user-list">
+
+        </ul>
+    </div>
+
+{% endblock %}
+
+{% block import_js %}
+    <script type="text/javascript" src="{% static 'haku_chat/js/chat_room_js.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,49 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{#{% if article_list %}#}
+{#    <ul>#}
+{#    {% for article in article_list %}#}
+{#        <li><a href="{% url 'hpc:article_detail' article.url_title %}">{{ article.title }}</a></li>#}
+{#    {% endfor %}#}
+{#    </ul>#}
+{#{% else %}#}
+{#    <p>No articles are available.</p>#}
+{#{% endif %}#}
+{#</body>#}
+{#</html>#}
+
+{% extends "hpc/base.html" %}
+
+{% load static %}
+
+{% block title %}Archive - Haku's{% endblock %}
+
+{% block content %}
+
+    <div class="content">
+
+        {% if article_list %}
+            <h4>Archive of <span class="underlined">{{ year|date:"Y" }}</span></h4>
+            <table class="table table-striped table-hover table-no-border">
+                <tbody>
+                    {% for article in article_list %}
+                        <tr>
+                            <td class="td-title">
+                                <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+                            </td>
+                            <td class="td-time">{{ article.pub_date }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% else %}
+            <p>No articles exist yet.</p>
+        {% endif %}
+    </div>
+{% endblock %}

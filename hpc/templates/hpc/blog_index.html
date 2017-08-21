@@ -1,0 +1,38 @@
+{% extends "hpc/base.html" %}
+
+{% load static %}
+{% load comments %}
+
+{% block title %}:: Blog - Haku's flying in the sky ::{% endblock %}
+
+{% block content %}
+
+    <div id="content">
+        {% if all_article_list %}
+{#            {% for article in all_article_list %}#}
+{#                <article class="article-in-list">#}
+{#                    {% get_comment_count for article as comment_count %}#}
+{#                    <h1><a href="{{ article.get_absolute_url }}">{{ article.title | title }}</a></h1>#}
+{#                    <time>{{ article.pub_date }}</time>#}
+{#                    <div class="separator">|</div>#}
+{#                    <a href="{{ article.get_absolute_url }}#comment-list"><span>{{ comment_count }} comments</span></a>#}
+{#                    <div class="article-content">#}
+{#                        <p>#}
+{#                            {{ article.content | linebreaks | truncatechars_html:100 }}#}
+{#                            <a href="{% url 'hpc:article_detail' article.url_title %}">#}
+{#                                <nobr>Read more>></nobr>#}
+{#                            </a>#}
+{#                        </p>#}
+{#                    </div>#}
+{#                </article>#}
+{#            {% endfor %}#}
+            {% include "hpc/infinite_article_template.html" %}
+
+
+        {% else %}
+            <h4>No articles exist.</h4>
+        {% endif %}
+
+    </div>
+
+{% endblock %}

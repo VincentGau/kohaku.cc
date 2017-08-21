@@ -1,0 +1,12 @@
+{% extends 'haku_chat/layout.html' %}
+
+{% block block_content %}
+
+    <form method="post" action="login/">
+        {% csrf_token %}
+        <input type="text" name="userid">
+        <input type="password" name="password">
+        <input type="submit" value="Login" />
+    </form>
+
+{% endblock %}

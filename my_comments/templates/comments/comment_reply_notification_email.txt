@@ -1,0 +1,7 @@
+Your comment posted on {{ site.name }} {{ content_object }} has been replied.
+
+Comment:
+{{ comment.comment }}
+
+
+View site    --    http://{{ site.domain }}{{ content_object.get_absolute_url }}#comment-list

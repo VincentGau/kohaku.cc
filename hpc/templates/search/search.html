@@ -1,0 +1,47 @@
+{% extends "hpc/base.html" %}
+
+{% load static %}
+{% load highlight %}
+
+{% block title %}Search results for "{{ query }}"{% endblock %}
+
+{% block content %}
+
+    <div class="content">
+        {% if query %}
+            <h4>Search results for <span class="underlined">{{ query }}</span></h4>
+
+            {% for result in page_obj.object_list %}
+                <article class="article-in-list">
+                    <h1>
+                        <a href="{{ result.object.get_absolute_url }}">
+                        {% highlight  result.object.title with query css_class "highlighted" %}
+                        </a>
+                    </h1>
+                    <time>{{ result.object.pub_date }}</time>
+                    <br>
+                    {% highlight  result.object.content with query css_class "highlighted" %}
+                </article>
+
+            {% empty %}
+                <p>No results found.</p>
+            {% endfor %}
+
+
+
+            {% if page.has_previous or page.has_next %}
+                <div>
+                    {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
+                    |
+                    {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+                </div>
+            {% endif %}
+        {% else %}
+             <h4>Take a bite of cloud, maybe wind, something else?</h4>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+
+

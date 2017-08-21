@@ -1,0 +1,43 @@
+{% load threadedcomments_tags %}
+
+
+
+<div class="comments">
+    <a name="comment-list"></a>
+    <span style="display:block; margin-top: 30px; margin-bottom: 20px;">{{ comment_count }} Comments &nbsp;&nbsp;&nbsp;
+        <a href="#comment_area">Leave a comment</a>
+    </span>
+
+    {% for comment in comment_list|fill_tree|annotate_tree %}
+        {% if comment.open %}
+            <ul>
+        {% else %}
+            </li>
+        {% endif %}
+        <li class="comment_li" id="c{{ comment.id }}">{# c## is used by the absolute URL of the Comment model, so keep that as it is. #}
+            <div class="comment">
+                <div class="comment_info">
+                    <span class="comment_user" style="font-weight:bold;">{{ comment.name }}&nbsp;&nbsp;&nbsp;</span>
+                    <span class="comment-time">
+                        {{ comment.submit_date | date:"Y-m-d H:i" }}
+                        {% if not comment.parent_id %}
+                            | <a href="#c{{ comment.id }}" data-comment-id="{{ comment.id }}" class="comment_reply_link">Reply</a>
+                        {% endif %}
+                    </span>
+{#                    <div class="comment_user">{{ comment.user_name }}</div>#}
+{#                    <div class="comment_data">#}
+{#                        {{ comment.submit_date|date:"d M Y, H:i" }}#}
+{##}
+{#                        {% if not comment.parent_id %}#}
+{#                            | <a href="#c{{ comment.id }}" data-comment-id="{{ comment.id }}" class="comment_reply_link">Reply</a>#}
+{#                        {% endif %}#}
+{#                    </div>#}
+                </div>
+                <div class="comment_text">
+                    {{ comment.comment }}
+                </div>
+            </div>
+            {% for close in comment.close %}</li></ul>{% endfor %}
+
+    {% endfor %}
+</div>

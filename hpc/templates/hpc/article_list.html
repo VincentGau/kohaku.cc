@@ -1,0 +1,88 @@
+{% extends "hpc/base.html" %}
+
+{% load static %}
+
+{#{% block title %}:: {{ category|capfirst  }} - Haku's ::{% endblock %}#}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+{#    <div id="content">#}
+{#        {% if article_list %}#}
+{#            {% for article in article_list %}#}
+{#                <article class="article-in-list">#}
+{#                    <h1><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h1>#}
+{#                    <time>{{ article.pub_date }}</time>#}
+{#                    <div class="article-content">#}
+{#                        <p>#}
+{#                            {{ article.content | linebreaks  }}#}
+{#                        </p>#}
+{#                    </div>#}
+{#                </article>#}
+{#            {% endfor %}#}
+{##}
+{##}
+{#        {% else %}#}
+{#            <p>No articles exist.</p>#}
+{#        {% endif %}#}
+{#    </div>#}
+
+
+{#    article list for all_list, archive, category#}
+    <div class="content">
+        {% if article_list %}
+            <h4> {{ table_title_1 }} <span class="underlined">{{ table_title_2 }}</span></h4>
+            <table class="table table-striped table-hover table-no-border">
+                <tbody>
+                    {% for article in article_list %}
+                        <tr>
+                            <td class="td-title">
+                                <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+                            </td>
+                            <td class="td-time">{{ article.pub_date }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+{#            <ul class="pagination">#}
+{#                {% if page_obj.has_previous %}#}
+{#                    <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>#}
+{#                    {% else %}#}
+{#                    <li class="disabled"><a>&laquo;</a></li>#}
+{#                {% endif %}#}
+{##}
+{#                {% for num in paginator.page_range %}#}
+{#                    <li><a href="?page={{ num }}">{{ num }}</a></li>#}
+{#                {% endfor %}#}
+{##}
+{#                {% if page_obj.has_next %}#}
+{#                    <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>#}
+{#                    {% else %}#}
+{#                    <li class="disabled"><a>&raquo;</a></li>#}
+{#                {% endif %}#}
+{#            </ul>#}
+
+            <div class="page-nav col-md-12">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}" class="col-md-2">Previous Page</a>
+                        {% else %}
+                        <div class="col-md-2"></div>
+                    {% endif %}
+
+                    <span class="current-page-tip col-md-8">
+                        Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+                    </span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}" class="col-md-2">Next Page</a>
+                    {% endif %}
+                </span>
+            </div>
+
+        {% else %}
+            <h4>No articles exist.</h4>
+        {% endif %}
+    </div>
+
+{% endblock %}

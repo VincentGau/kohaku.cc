@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="shortcut icon" href="{% static 'haku_chat/img/favicon.ico' %}" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'haku_chat/css/style.css' %}"/>
+
+</head>
+<body>
+{% block block_content %}{% endblock %}
+
+
+
+<script type="text/javascript" src="{% static 'haku_chat/js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'haku_chat/js/script.js' %}"></script>
+
+{% block import_js %} {% endblock %}
+
+</body>
+</html>

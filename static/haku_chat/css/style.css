@@ -1,0 +1,16 @@
+#message_box {
+    background-color: #FFF;
+    margin-bottom: 20px;
+    height: -moz-calc(100% - 120px);
+    height: -webkit-calc(100% - 120px);
+    height: calc(100% - 120px);
+    overflow: auto;
+}
+
+#type_area {
+    height: 100px;
+    overflow: hidden;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}

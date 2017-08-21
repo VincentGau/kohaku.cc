@@ -1,0 +1,85 @@
+{#{% load static %}#}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>#}
+{#    <link rel="shortcut icon" href="{% static 'hpc/img/favicon.ico' %}" type="image/x-icon"/>#}
+{#    <link rel="apple-touch-icon" href="/media/icon_114X114.png" sizes="114x114">#}
+{#    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'hpc/css/style-2.css' %}"/>#}
+{##}
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'hpc/css/style-mobile.css' %}" media="only screen and (max-width: 1020px)"/>#}
+{#    <title>{% block title %}{% endblock %}</title>#}
+{#</head>#}
+{#<body>#}
+{##}
+{##}
+{#<div class="container-fluid">#}
+{##}
+{#<!-- Stack the columns on mobile by making one full-width and the other half-width -->#}
+{#<div class="row">#}
+{#  <div class="col-xs-12 col-md-8" style="background-color: #ddffdd;">.col-xs-12 .col-md-8</div>#}
+{#  <div class="col-xs-12 col-md-4" style="background-color: #f8f8f8;">.col-xs-6 .col-md-4</div>#}
+{#</div>#}
+{##}
+{#    <div class="row row-eq-height">#}
+{#        <div class="col-xs-12 col-md-8 main-content">#}
+{#            {% block content %}{% endblock %}#}
+{#        </div>#}
+{#        <div class="col-xs-6 col-md-4 side-content">#}
+{#            <div class="input-group search-area col-md-6">#}
+{#                <input type="text" class="form-control" id="search-text" placeholder="Search for...">#}
+{#                <span class="input-group-btn">#}
+{#                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>#}
+{#                </span>#}
+{#                <span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true"></span>#}
+{#            </div>#}
+{##}
+{#            <div id="latest-article">#}
+{#                <h3>Recent</h3>#}
+{#                <ul>#}
+{#                    {% for article in latest_article_list %}#}
+{#                        <li><a href="{% url 'hpc:article_detail' article.url_title %}">{{ article.title }}</a></li>#}
+{#                    {% endfor %}#}
+{##}
+{#                </ul>#}
+{#                <h3>Archives</h3>#}
+{#                <ul>#}
+{#                    {% regroup all_article_list by pub_date.year as year_list %}#}
+{#                    {% for year in year_list %}#}
+{#                        <p><a href="{% url 'hpc:archive_year' year.grouper %}">{{ year.grouper }} ({{ year.list|length }})</a></p>#}
+{#                    {% endfor %}#}
+{#                </ul>#}
+{#                <h3>Categories</h3>#}
+{#                <ul>#}
+{#                    {% regroup all_article_list by category as type_list %}#}
+{#                    {% for category in type_list %}#}
+{#                        <p><a href="{% url 'hpc:category_list' category.grouper %}">{{ category.grouper }} ({{ category.list|length }})</a></p>#}
+{#                    {% endfor %}#}
+{#                </ul>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row footer">#}
+{#        footer#}
+{#    </div>#}
+{#</div>#}
+{##}
+{##}
+{##}
+{##}
+{#</body>#}
+{##}
+{#<script type="text/javascript" src="{% static 'hpc/js/jquery-3.1.1.min.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'hpc/js/script.js' %}"></script>#}
+{#<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>#}
+{##}
+{#</html>#}
+
+<form enctype="multipart/form-data" action="/upload/" method="post">
+    {% csrf_token %}
+   <input type="file" name="myfile" />
+   <br/>
+   <input type="submit" value="upload"/>
+</form>

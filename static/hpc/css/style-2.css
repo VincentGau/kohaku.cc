@@ -1,0 +1,304 @@
+h1, h3, h4 {
+    font-family: Bitter-Bold;
+}
+
+.navbar-brand {
+    font-family: Bitter-Bold;
+    font-size: 32px;
+}
+
+::selection {
+    background-color: #ff4629;
+    color: #fff;
+}
+
+::-moz-selection {
+    background-color: #ff4629;
+    color: #fff;
+}
+
+::-webkit-selection {
+    background-color: #ff4629;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.highlighted {
+    background-color: yellow;
+    color:#222;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.header {
+    background-color: #79aec8;
+}
+
+.main {
+    min-height: 800px;
+}
+
+.main-content {
+    background-color: #fff;
+}
+
+.content h4 {
+    margin-top: 70px;
+}
+
+.article-in-list {
+    padding-bottom: 30px;
+    padding-top: 20px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.table-no-border > tbody > tr > td {
+    border-top: none;
+}
+
+.table-no-border {
+    margin-top: 20px;
+}
+
+.td-title {
+    font-size: 16px;
+}
+
+.td-title a {
+    color: #265f98;
+}
+
+.td-time {
+    color: #9B9B9B;
+    font-size: 12px;
+    text-align: right;
+}
+
+article {
+    line-height: 2rem;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+article h1 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+    font-weight: bold;
+    /*font-family: "Microsoft YaHei","Helvetica Neue", 'Microsoft Yahei', tahoma;*/
+}
+
+time {
+    color: #225588;
+}
+
+article p {
+    /*font-size: 120%;*/
+    /*padding:10px 0;*/
+}
+
+article a {
+    color: #337ab7;
+}
+
+
+.comments_wrapper{
+    margin-top: 30px;
+    border-top: 1px solid #e4e4e4;
+}
+
+.comments>ul>li{
+    padding: 5px;
+    /*border-bottom: 1px solid #e4e4e4;*/
+}
+
+.comments>ul{
+    margin:0;
+    padding:0;
+}
+
+.comments ul li{
+    list-style: none;
+    margin-top:10px;
+}
+
+.comment-time{
+    /*font-size: small;*/
+    font-weight: normal;
+    color:#777;
+}
+
+.comment_text{
+    margin-top:5px;
+}
+
+/*honeypot of comment form*/
+#id_honeypot {
+    display: none;
+}
+
+.article-footer {
+    margin-top: 20px;
+}
+
+/*page nav in article list such as archive, category, all-list*/
+.step-links a{
+    display:block;
+    padding: 4px 10px;
+    border: 1px solid #e1e1e1;
+    box-shadow: inset 0 0 10px #f5f5f5;
+    color: #898989;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+
+.page-nav{
+    margin-top: 20px;
+    padding: 0;
+    text-align: center;
+}
+
+.cat-info {
+    color: #888;
+    font-size: 10px;
+}
+
+.separator {
+    display: inline;
+    color: #888;
+}
+
+.prev-next-nav .navbar-right {
+    margin-right: 20px;
+    float: right !important;
+}
+
+.prev-next-nav .navbar-left {
+    margin-left: 20px;
+    float: left !important;
+}
+
+#placeholder{
+    height:20px;
+}
+
+.side-content {
+    /*background-color: #f8f8f8;*/
+}
+
+.search-area {
+    margin-top: 40px;
+}
+
+#latest-article h3 {
+    margin-top: 30px;
+}
+
+#latest-article li {
+    list-style: none;
+    border-bottom: 1px dotted #ced8df;
+    padding: 5px 0 5px 15px;
+    background: url("../img/nav-arrow.png") no-repeat 0 11px;
+}
+
+#latest-article li:first-child {
+    border-top: 1px dotted #ced8df;
+}
+
+.side-content-ul {
+    margin: 0;
+    padding: 0;
+}
+
+/*.main > [class*="col-"] {*/
+    /*margin-bottom: -99999px;*/
+    /*padding-bottom: 99999px;*/
+/*}*/
+
+/*.main {*/
+    /*overflow: hidden;*/
+/*}*/
+
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 2px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    min-height: 80px;
+    background-color: #222;
+    color: #ffffff;
+}
+
+.footer p {
+    margin: 0;
+}
+
+#scroll-to-top{
+    display:none;
+    width:48px;
+    height:48px;
+    bottom:100px;
+    right:200px;
+    position:fixed;
+}
+
+#scroll-to-top:hover{
+    cursor:pointer;
+}
+
+.scroll-top-light{
+    background: url("../img/back-to-top.png") 0 0 no-repeat;
+}
+
+.scroll-top-dark{
+    background: url("../img/back-to-top.png") -48px 0 no-repeat;
+}
+
+#about {
+    width:100%;
+    text-align: center;
+    display: block;
+    margin: 300px auto;
+    font-family: Bitter-Bold;
+    font-size: 2rem;
+}
+
+#about a{
+    text-decoration: none;
+    color:#222;
+}
+
+#about a:hover{
+    text-decoration: none;
+}
+
+
+.loading-gif{
+    /*font-size:50px;*/
+    display:block;
+    margin:0 auto;
+    width:100px;
+}
+
+@font-face {
+    font-family: Bitter-Bold;
+    src: url("../font/Bitter-Bold.ttf");
+}
+
+@media screen and (max-width: 768px) {
+    #scroll-to-top {
+        width:0;
+        height:0;
+    }
+}
